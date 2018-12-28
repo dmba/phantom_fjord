@@ -3,32 +3,33 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:phantom_fjord/src/pages/home/home.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({Key key, this.title}) : super(key: key);
+  HomePage(this._bloc, {Key key}) : super(key: key);
 
-  final String title;
-  final CounterBloc _bloc = CounterBloc();
+  final CounterBloc _bloc;
 
   @override
-  _HomePageState createState() => _HomePageState(_bloc);
+  _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-  _HomePageState(this._bloc);
-
-  final CounterBloc _bloc;
+  @override
+  void dispose() {
+    widget._bloc.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text('Flutter Demo Home Page'),
       ),
       body: BlocBuilder<CounterEvent, CounterState>(
-        bloc: _bloc,
+        bloc: widget._bloc,
         builder: _counterBuilder,
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _bloc.increment,
+        onPressed: widget._bloc.increment,
         tooltip: 'Increment',
         child: Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
