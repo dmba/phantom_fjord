@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:phantom_fjord/src/pages/home_page.dart';
+import 'package:phantom_fjord/src/pages/home/home.dart';
 
 class App extends StatelessWidget {
   @override
