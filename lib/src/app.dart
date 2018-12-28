@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:phantom_fjord/src/pages/home/home.dart';
+import 'package:phantom_fjord/src/routes.dart';
 
 class App extends StatelessWidget {
   @override
@@ -9,7 +9,7 @@ class App extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomePage(title: 'Flutter Demo Home Page'),
+      routes: routes,
     );
   }
 }
