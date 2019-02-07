@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:get_it/get_it.dart';
+import 'package:kiwi/kiwi.dart' as kiwi;
 import 'package:phantom_fjord/src/di/module.dart';
 
 class Injector extends InheritedWidget {
@@ -15,15 +15,15 @@ class Injector extends InheritedWidget {
   }) {
     final injector = Injector._(child);
 
-    modules.forEach((m) => m.configure(injector._getIt));
+    modules.forEach((m) => m.configure(injector._container));
 
     return injector;
   }
 
-  final GetIt _getIt = GetIt();
+  final kiwi.Container _container = kiwi.Container();
 
   @override
-  bool updateShouldNotify(Injector old) => _getIt != old._getIt;
+  bool updateShouldNotify(Injector old) => _container != old._container;
 
-  T inject<T>() => _getIt.get<T>();
+  T inject<T>() => _container<T>();
 }

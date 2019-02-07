@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:phantom_fjord/src/routes.dart';
+import 'package:phantom_fjord/src/pages/routes.dart';
 
 class App extends StatelessWidget {
   @override
@@ -10,6 +10,7 @@ class App extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       routes: routes,
+      initialRoute: HOME,
     );
   }
 }

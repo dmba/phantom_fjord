@@ -7,7 +7,7 @@ void main() {
   runApp(Injector(
     child: App(),
     modules: [
-      AppModule(),
+      AppModule.forApp(),
     ],
   ));
 }

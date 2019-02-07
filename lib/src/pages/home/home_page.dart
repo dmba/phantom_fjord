@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:phantom_fjord/src/pages/home/home.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage(this._bloc, {Key key}) : super(key: key);
+  HomePage(this._bloc) : super();
 
   final CounterBloc _bloc;
 

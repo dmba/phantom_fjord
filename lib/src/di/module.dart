@@ -1,5 +1,5 @@
-import 'package:get_it/get_it.dart';
+import 'package:kiwi/kiwi.dart';
 
 abstract class Module {
-  void configure(GetIt get);
+  void configure(Container container);
 }

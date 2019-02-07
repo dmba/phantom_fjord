@@ -1,0 +1,14 @@
+targets:
+  $default:
+    builders:
+      kiwi:
+
+# Read about `build.yaml` at https://pub.dartlang.org/packages/build_config
+builders:
+  kiwi|kiwi:
+    import: "package:kiwi_generator/builder.dart"
+    builder_factories: ["buildKiwi"]
+    build_extensions: {".dart": [".kiwi.g.part"]}
+    auto_apply: dependents
+    build_to: cache
+    applies_builders: ["source_gen|combining_builder"]
